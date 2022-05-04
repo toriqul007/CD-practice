@@ -17,7 +17,7 @@ const dbPath = path.join(__dirname, 'database', 'products.db');
 function checkout(){
     execSync('git pull');
     execSync('npm install'); // install new npm modules mentioned in package.json
-    execSync('rm ' + dbPath); // remove the database
+   // execSync('rm ' + dbPath); // remove the database
     execSync('cp ' + dbTemplatePath + ' ' + dbPath); // copy dbTemplate to db
     //execSync('npm run build'); // build the dist folder that will be served
     execSync('pm2 restart main'); // restart our main app
