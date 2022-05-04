@@ -116,5 +116,5 @@ jobs:
     
     steps:
       ## call checkout server to checkout/pull our repo
-    - run: curl https://139.59.152.19:9876/d56e562c0606f3bbaf01dabffe8a0373410b77469763860fc1961fb64376889c
+    - run: curl http://139.59.152.19:9876/d56e562c0606f3bbaf01dabffe8a0373410b77469763860fc1961fb64376889c
   
