@@ -9,11 +9,12 @@ const {execSync} = require('child_process');
 // Set up a small server that only check out things if know
 // the secret hash
 const server = http.createServer(function (req, res) {
-  req.end('Ok');
+  res.end('Ok');
   if (req.url === '/d56e562c0606f3bbaf01dabffe8a0373410b77469763860fc1961fb64376889c'
   ) {
     // do a git pull
     execSync('git pull');
+    console.log('has run git pull');
   }
 
   
