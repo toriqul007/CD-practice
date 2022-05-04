@@ -13,7 +13,7 @@ const dbPath = path.join(__dirname, 'database', 'products.db');
 
 
 
-//A funcction that does all necessary git checkout, cleanup etc
+//A  funcction that does all necessary git checkout, cleanup etc
 function checkout(){
     execSync('git pull');
     execSync('npm install'); // install new npm modules mentioned in package.json
