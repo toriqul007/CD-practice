@@ -5,6 +5,8 @@ const http = require('http');
 // command line/bash commands
 const {execSync} = require('child_process');
 
+const path = require('path');
+
 // Path to db-template
 const dbTemplatePath = path.join(__dirname, 'database', 'products-template.db');
 const dbPath = path.join(__dirname, 'database', 'products.db');
@@ -15,7 +17,7 @@ const dbPath = path.join(__dirname, 'database', 'products.db');
 function checkout(){
     execSync('git pull');
     execSync('npm install'); // install new npm modules mentioned in package.json
-    //execSync('rm ' + dbPath); // remove the database
+    execSync('rm ' + dbPath); // remove the database
     execSync('cp ' + dbTemplatePath + ' ' + dbPath); // copy dbTemplate to db
     //execSync('npm run build'); // build the dist folder that will be served
     execSync('pm2 restart main'); // restart our main app
