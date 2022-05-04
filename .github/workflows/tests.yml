@@ -101,3 +101,20 @@ jobs:
     - run: npm run test
 
   
+  golive:
+
+    # demand that the 3 test jobs succeed
+    # before running go live
+    needs: [api-tests, wdio-tests, jest-tests]
+
+    # only run this job if the environment protection rules
+    # (a reviewers approves and we are on the dev branch)
+    # are fulfilled
+    #environment: "Dev server"
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      ## call checkout server to checkout/pull our repo
+    - run: curl https://139.59.152.19:9876/d56e562c0606f3bbaf01dabffe8a0373410b77469763860fc1961fb64376889c
+  
